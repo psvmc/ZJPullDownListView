@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="46dp"
+	    android:background="#1565c0"
+	    android:text="@string/app_name"
+	    android:gravity="left|center_vertical"
+	    android:paddingLeft="10dp"
+	    android:textColor="#fff"
+	    />
+    <cn.psvmc.pulldownlistview.ZJPullListView
+        android:id="@+id/pullDownListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f3f3f3"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <RelativeLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true" >
+
+            <cn.psvmc.pulldownlistview.HeaderOrFooter.ZJPullListHeaderArrow
+                android:id="@+id/listHeaderView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutFooter"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true" >
+            <!--加载更多的动画-->
+            <cn.psvmc.pulldownlistview.HeaderOrFooter.ZJPullListFooterText
+                android:id="@+id/listFooterView"
+                android:layout_width="100dp"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                >
+            </cn.psvmc.pulldownlistview.HeaderOrFooter.ZJPullListFooterText>
+        </RelativeLayout>
+    </cn.psvmc.pulldownlistview.ZJPullListView>
+</LinearLayout>
