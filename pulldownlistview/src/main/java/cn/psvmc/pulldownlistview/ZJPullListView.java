@@ -22,6 +22,8 @@ import cn.psvmc.pulldownlistview.Listener.ZJPullListListener;
 public class ZJPullListView extends RelativeLayout implements
         OnScrollListener {
     private String TAG = "ZJPullListView";
+    //点击的position
+    private int clickPosition;
     static int MAX_PULL_TOP_HEIGHT;
     static int MAX_PULL_BOTTOM_HEIGHT;
 
@@ -61,12 +63,24 @@ public class ZJPullListView extends RelativeLayout implements
         return this.isRefreshing;
     }
 
+    /**
+     * 获取点击的位置
+     * @return
+     */
+    public int getClickPosition() {
+        return clickPosition;
+    }
+
     private ListView mListView = new ListView(getContext()) {
 
         int lastY = 0;
 
         @Override
         public boolean onTouchEvent(MotionEvent ev) {
+
+            int x = (int) ev.getX();
+            int y = (int) ev.getY();
+            clickPosition = pointToPosition(x, y);
 
             if (isAnimation || isRefreshing) {
                 return super.onTouchEvent(ev);
