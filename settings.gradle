@@ -1,1 +1,1 @@
-include ':app', ':pulldownlistview', ':zjslideitem', ':pulldownandslideitemdemo'
+include ':app', ':pulldownlistview'
